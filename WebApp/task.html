@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Form</title>
+</head>
+<body>
+
+    <form onsubmit="return checkForm()">
+
+        Username:
+        <input type="text" id="username">
+        <br><br>
+
+        <label>Password:</label>
+        <input type="password" id="password">
+        <span id="passError" style="color:red;"></span>
+        <br><br>
+
+        <label>Confirm Password:</label>
+        <input type="password" id="confirm_password">
+        <span id="confirmError" style="color:red;"></span>
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function checkForm() {
+
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+            var conpass = document.getElementById("confirm_password").value;
+
+           
+            document.getElementById("passError").innerText = "";
+            document.getElementById("confirmError").innerText = "";
+
+            // Empty check
+            if(user == "" || pass == "" || conpass == "") {
+                document.getElementById("passError").innerText = "Fill all fields";
+                return false;
+            }
+
+            // Password match check
+            if(pass != conpass) {
+                document.getElementById("confirmError").innerText = "Passwords not match";
+                return false;
+            }
+
+            // Success
+            alert("Form Submitted Successfully");
+           
+        }
+    </script>
+
+</body>
+</html>
