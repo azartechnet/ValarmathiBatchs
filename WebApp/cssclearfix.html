@@ -1,0 +1,44 @@
+<!--
+ without clearfix
+-->
+<style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+        margin: 10px;
+        float: left;
+    }
+    .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+<div class="clearfix">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+<!--
+ with clearfix
+-->
+<style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: lightcoral;
+        margin: 10px;
+        float: left;
+    }
+    .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+<div class="clearfix">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
