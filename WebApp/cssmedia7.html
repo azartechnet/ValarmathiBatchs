@@ -1,0 +1,24 @@
+<!--Two column to one column-->
+<style>
+    .column
+    {
+        float:left;
+        width:50%;
+    }
+    @media screen and (max-width: 600px)
+    {
+        .column
+        {
+            float:none;
+            width:100%;
+        }
+    }
+</style>
+<div class="column">
+    <h2>Column 1</h2>
+    <p>This is the first column. It will take up 50% of the width on larger screens and 100% on smaller screens.</p>
+</div>
+<div class="column">
+    <h2>Column 2</h2>
+    <p>This is the second column. It will also take up 50% of the width on larger screens and 100% on smaller screens.</p>
+</div>

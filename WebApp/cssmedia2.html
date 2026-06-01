@@ -1,0 +1,17 @@
+<!--Min and max width-->
+<style>
+    .example
+    {
+        color: red;
+    }
+    @media (min-width: 500px) and (max-width: 800px)
+    {
+        .example
+        {
+            background-color: green;
+        }
+    }
+</style>
+<div class="example">
+    This text will be red if the viewport is less than 500 pixels wide or wider than 800 pixels, and green if it is between 500 and 800 pixels wide.
+</div>

@@ -1,0 +1,18 @@
+<!--Hide the elements-->
+<style>
+  .hide {
+    display: none;
+  }
+</style>
+<!--Show the elements when the viewport is at least 768px wide-->
+<style>
+  @media (min-width: 768px) {
+    .hide {
+      display: block;
+    }
+  }
+</style>
+<div class="hide">
+    This text will only be visible when the viewport is at least 768px wide.
+    Resize the browser window to see the effect.
+</div>
