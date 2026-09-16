@@ -107,7 +107,7 @@ r1.render(<MyElem/>)*/
 const r1=ReactDOM.createRoot(document.getElementById("root"))
 r1.render(<Login/>)*/
 //function component
-function Sample()
+/*function Sample()
 {
   return(
     <div>
@@ -116,4 +116,83 @@ function Sample()
   )
 }
 const r1=ReactDOM.createRoot(document.getElementById("root"))
-r1.render(<Sample/>)
+r1.render(<Sample/>)*/
+
+//function Component
+/*import './index.css'
+function Sample1()
+{
+  return(
+    <div>
+      <h1>This is Function Component</h1>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample1/>)*/
+
+/*function Greeting()
+{
+  const name="azar";
+  const age=20;
+  return(
+    <div>
+      <h1>Hello,{name}</h1>
+      <p>your age is::{age}</p>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Greeting/>)*/
+
+//Using onClick()
+/*function SimpleButton()
+{
+  function showMessage()
+  {
+    alert("Button was clicked")
+  }
+  return(
+    <div>
+      <button onClick={showMessage}>Click</button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<SimpleButton/>)*/
+
+//Function Component with props
+/*function Sample(props)
+{
+  return(
+    <div>
+      <h1>Hello{props.name}{props.age}</h1>
+      <p>This is Paragraph</p>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample name="Azar" age="25"/>)*/
+
+//Compoent in component
+
+function Component1()
+{
+  return(
+    <div>
+      <h1>Hello</h1>
+      <p>Component1</p>
+      <Component2/>
+    </div>
+  )
+}
+function Component2()
+{
+  return(
+    <div>
+      <h1>Component2</h1>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Component1/>)
