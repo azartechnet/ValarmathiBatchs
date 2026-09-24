@@ -329,7 +329,7 @@ r1.render(<Football/>)*/
 
 //Event with argument
 
-function Football()
+/*function Football()
 {
   const shoot=(e)=>{
     alert("Great Shot!!!"+e)
@@ -341,4 +341,151 @@ function Football()
   )
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Football/>)
+r1.render(<Football/>)*/
+
+/*function MissedGoal()
+{
+  return<h1>MissedGoal!!</h1>
+}
+function MadeGoal()
+{
+  return<h1>MadeGoal!!!</h1>
+}
+function Football(props)
+{
+  const isGoal=props.isGoal;
+  return(
+    <div>
+      {isGoal?<MadeGoal/>:<MissedGoal/>}
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football isGoal={false}/>)*/
+
+//Using if else
+
+/*function MissedGoal()
+{
+  return<h1>MissedGoal!!</h1>
+}
+function MadeGoal()
+{
+  return<h1>MadeGoal!!!</h1>
+}
+function Football(props)
+{
+  const isGoal=props.isGoal;
+  let goal;
+  if(isGoal)
+  {
+    goal=<MadeGoal/>
+  }
+  else
+  {
+    goal=<MissedGoal/>
+  }
+  return(
+    <div>
+      {goal}
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football isGoal={false}/>)*/
+
+//Event using forms
+/*function MyForm()
+{
+  const handleSubmit=()=>{
+   
+    alert("FormSubmitted")
+  }
+  return(
+    <div>
+      <form onSubmit={handleSubmit}>
+           <input type="text" />
+           <input type="submit" value="Submit"/>
+      </form>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<MyForm/>)*/
+
+//Using class for list and map
+
+/*class MyList extends React.Component{
+  render()
+  {
+    const items=["item1","item2","item3"]
+    return(
+      <div>
+        <h1>MyList</h1>
+        <ul>
+          {items.map((item,index)=>(
+            <li>{item}{index}</li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<MyList/>)*/
+
+//React List using Map with props
+
+/*function MyList(props)
+{
+  const items=props.items;
+  return(
+    <div>
+      <h1>MyList</h1>
+      <ul>
+        {items.map((item,index)=>(
+          <li>{item}<br/>{index}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<MyList items={["a1","a2","a3"]}/>)*/
+
+//Destructuring
+
+/*function Welcome({name,age})
+{
+  return(
+    <div>
+      <h1>Hello,{name}</h1>
+      <p>Your age is::{age}</p>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Welcome name="azar" age={20}/>)*/
+
+//Destructure using class
+
+class Sample extends React.Component
+{
+  constructor()
+  {
+    super();
+    this.state={name:"azar",age:28}
+  }
+  render()
+  {
+    const {name,age}=this.state;
+    return(
+      <div>
+        <h1>Hello,{name}</h1>
+        <p>Your age is::{age}</p>
+      </div>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)
