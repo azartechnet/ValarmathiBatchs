@@ -469,7 +469,7 @@ r1.render(<Welcome name="azar" age={20}/>)*/
 
 //Destructure using class
 
-class Sample extends React.Component
+/*class Sample extends React.Component
 {
   constructor()
   {
@@ -483,6 +483,52 @@ class Sample extends React.Component
       <div>
         <h1>Hello,{name}</h1>
         <p>Your age is::{age}</p>
+      </div>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//Destructuring in Array
+
+/*function Skills()
+{
+  const skills=["HTML","CSS","JavaScript","React"];
+  const [first,second,...rest]=skills;
+  return(
+    <div>
+      <h1>My Skills</h1>
+      <p>First Skill:{first}</p>
+      <p>Second Skill:{second}</p>
+      <p>Rest of the Skills:{rest.join(",")}</p>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Skills/>)*/
+
+//class component mounting phase
+
+class Sample extends React.Component
+{
+  constructor()
+  {
+    super();
+    this.state={name:"azar",age:20}
+    console.log("Constructor called")
+  }
+  componentDidMount()
+  {
+    console.log("ComponentDidMount called")
+  }
+  render()
+  {
+    console.log("Render called")
+    return(
+      <div>
+        <h1>Hello,{this.state.name}</h1>
+        <p>Your age is::{this.state.age}</p>
       </div>
     )
   }
