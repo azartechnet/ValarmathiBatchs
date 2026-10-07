@@ -510,7 +510,7 @@ r1.render(<Skills/>)*/
 
 //class component mounting phase
 
-class Sample extends React.Component
+/*class Sample extends React.Component
 {
   constructor()
   {
@@ -534,4 +534,99 @@ class Sample extends React.Component
   }
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Sample/>)
+r1.render(<Sample/>)*/
+
+//Class Component updated
+
+/*class Sample extends React.Component
+{
+  constructor()
+  {
+    super();
+    this.state={count:0}
+    console.log("Constructor called")
+  }
+  componentDidMount()
+  {
+    console.log("ComponentDidMount called")
+  }
+  componentDidUpdate()
+  {
+    console.log("ComponentDidUpdate called")
+  }
+  increment=()=>{
+    this.setState({count:this.state.count+1})
+  }
+  render()
+  {
+    console.log("Render called")
+    return(
+      <div style={{textAlign:'center'}}>
+        <h1>Counter:{this.state.count}</h1>
+        <button onClick={this.increment}>Increment</button>
+      </div>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//Class Component Unmounting
+
+/*class Sample extends React.Component
+{
+  constructor()
+  {
+    super();
+    this.state={show:true}
+  }
+  toggle=()=>{
+    this.setState({show:!this.state.show})
+  }
+  render()
+  {
+    return(
+      <div style={{textAlign:'center'}}>
+        <button onClick={this.toggle}>Toggle</button>
+        {this.state.show && <Child/>}
+      </div>
+    )
+  }
+}
+class Child extends React.Component
+{
+  componentWillUnmount()
+  {
+    alert("Component is unmounting")
+  }
+  render()
+  {
+    return(
+      <h1>Hello, I am Child Component</h1>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//useState
+
+function Counter()
+{
+  const [count,setCount]=React.useState(0);
+  const increment=()=>{
+    setCount(count+1)
+  }
+  const decrement=()=>{
+    setCount(count-1)
+  }
+  return(
+    <div style={{textAlign:'center'}}>
+      <h1>Counter:{count}</h1>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Counter/>)
