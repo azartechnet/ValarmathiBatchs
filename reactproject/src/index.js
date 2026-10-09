@@ -611,7 +611,7 @@ r1.render(<Sample/>)*/
 
 //useState
 
-function Counter()
+/*function Counter()
 {
   const [count,setCount]=React.useState(0);
   const increment=()=>{
@@ -629,4 +629,71 @@ function Counter()
   )
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Counter/>)
+r1.render(<Counter/>)*/
+
+//useState another example
+
+/*function Sample()
+{
+  const [name,setName]=React.useState("azar");  
+
+  const changeName=()=>{
+    setName("mohamed")
+  }
+  return(
+    <div style={{textAlign:'center'}}>
+      <h1>Hello,{name}</h1>
+      <button onClick={changeName}>Change Name</button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//useEffect
+
+/*function Sample()
+{
+  const [count,setCount]=React.useState(0);
+  React.useEffect(()=>{
+    document.title=`Count:${count}`
+  })
+  const increment=()=>{
+    setCount(count+1)
+  }
+  return(
+    <div style={{textAlign:'center'}}>
+      <h1>Counter:{count}</h1>
+      <button onClick={increment}>Increment</button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//useEffect with cleanup
+
+function Sample()
+{
+  const [count,setCount]=React.useState(0);
+  React.useEffect(()=>{
+    document.title=`Count:${count}`
+    return()=>{
+      console.log("Cleanup function called")
+    }
+  }
+  )
+  const increment=()=>{
+    setCount(count+1)
+  }
+  return(
+    <div style={{textAlign:'center'}}>
+      <h1>Counter:{count}</h1>
+      <button onClick={increment}>Increment</button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)
+  
+
