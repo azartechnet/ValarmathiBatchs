@@ -673,7 +673,7 @@ r1.render(<Sample/>)*/
 
 //useEffect with cleanup
 
-function Sample()
+/*function Sample()
 {
   const [count,setCount]=React.useState(0);
   React.useEffect(()=>{
@@ -694,6 +694,92 @@ function Sample()
   )
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
+
+//React without useContext
+
+/*function Component1()
+{
+  const [user,setUser]=React.useState("azar");
+  return(
+    <div>
+      <h1>Hello,{user}</h1>
+      <button onClick={()=>setUser("mohamed")}>Change User</button>
+      <Component2 user={user}/>
+    </div>
+  )
+}
+function Component2({user})
+{
+  return(
+    <div>
+      <h1>Component2</h1>
+      <p>User:{user}</p>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Component1/>)*/
+
+//React with useContext
+
+/*const UserContext=React.createContext();
+
+function Component1()
+{
+  const [user,setUser]=React.useState("azar");
+  return(
+    <UserContext.Provider value={user}>
+      <div>
+        <h1>Hello,{user}</h1>
+        <button onClick={()=>setUser("mohamed")}>Change User</button>
+        <Component2/>
+      </div>
+    </UserContext.Provider>
+  )
+}
+function Component2()
+{
+  const user=React.useContext(UserContext);
+  return(
+    <div>
+      <h1>Component2</h1>
+      <p>User:{user}</p>
+      <Component3/>
+    </div>
+  )
+}
+function Component3()
+{
+  const user=React.useContext(UserContext);
+  return(
+    <div>
+      <h1>Component3</h1>
+      <p>User:{user}</p>
+    </div>
+  )
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Component1/>)*/
+
+//useRef
+
+function Sample()
+{
+  const inputRef=React.useRef();
+  const handleClick=()=>{
+    inputRef.current.focus();
+  }
+  return(
+    <div style={{textAlign:'center'}}>
+      <input type="text" ref={inputRef}/>
+      <button onClick={handleClick}>Focus Input</button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(<Sample/>)
+
   
 
