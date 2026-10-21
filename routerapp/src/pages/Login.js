@@ -1,4 +1,13 @@
 const Login=()=>{
-    return<h1>This is Login Page</h1>
+    return(
+       <div>
+        <h1>Login Form</h1>
+        <label>UserName</label>
+        <input type="text"/>
+        <label>Password</label>
+        <input type="password"/>
+        <input type="submit" value="Submit"/>
+       </div>
+    )
 }
 export default Login;

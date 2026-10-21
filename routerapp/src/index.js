@@ -5,6 +5,7 @@ import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Contact from "./pages/Contact";
+import Product from "./pages/Product";
 
 export default function App()
 {
@@ -15,6 +16,7 @@ export default function App()
             <Route index element={<Home/>}/>
             <Route path="contact" element={<Contact/>}/>
             <Route path="login" element={<Login/>}/>
+            <Route path="product" element={<Product/>}/>
             </Route>
         </Routes>
         </BrowserRouter>
